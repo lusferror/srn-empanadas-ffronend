@@ -17,6 +17,6 @@ class Home extends BaseController
             ]
         ]);
         $data = json_decode($response->getBody(), true);
-        return view('welcome_message', ['empanadas' => $data['empanadas']]);
+        return view('home', ['empanadas' => $data['empanadas']]);
     }
 }
