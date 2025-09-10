@@ -1,4 +1,4 @@
-export const basicAuthenticacion = (req, res, next) => {
+export const basicAuthentication = (req, res, next) => {
   if (req.headers.authorization) {
     const authHeader = req.headers.authorization;
     const token = authHeader.split(' ')[1];
