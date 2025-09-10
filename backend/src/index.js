@@ -1,8 +1,11 @@
 import express from 'express';
 import cors from 'cors';
 import { basicAuthentication } from './middlewares/basicAuthentication.js';
+import { initDb } from './db/pool.js';
 
 const app = express();
+
+initDb();
 
 app.use(cors());
 app.use(express.json());
