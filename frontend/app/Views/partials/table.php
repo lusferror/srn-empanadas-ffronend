@@ -63,7 +63,7 @@
         <?php endforeach; ?>
       <?php else: ?>
         <tr>
-          <td colspan="4" class="text-center">No hay empanadas registradas.</td>
+          <td colspan="6" class="text-center">No hay empanadas registradas.</td>
         </tr>
       <?php endif; ?>
     </tbody>
