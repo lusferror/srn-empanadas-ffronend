@@ -18,7 +18,7 @@ Recuerda que los archivos `.env` deben ser copiados manualmente a cada entorno (
 1. Clona este repositorio y entra a la carpeta raíz:
 	```sh
 	git clone <URL-del-repo>
-	cd gestion_empanadas_chilenas
+	cd srn-empanadas-ffronend
 	```
 2. **Instala las dependencias del backend y frontend antes de levantar los servicios:**
 	```sh
