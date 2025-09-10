@@ -65,11 +65,13 @@ export const updateEmpanada = async (req, res) => {
     }
 
     const { name, type, filling, price, is_sold_out } = req.body;
+    console.log('Datos recibidos para actualización:', req.body);
     const sanitizedBody = sanitizeBody(req.body);
     let query = 'UPDATE empanadas SET ';
     if (Object.keys(req.body).length === 0) {
       return res.status(400).json({ error: 'El cuerpo de la solicitud no puede estar vacío' });
     }
+    console.log('Cuerpo de la solicitud:', sanitizedBody);
     Object.keys(sanitizedBody).forEach(key => {
       const value = sanitizedBody[key];
       if (key === 'is_sold_out' && (Boolean(value) === true || Boolean(value) === false)) {
@@ -132,7 +134,7 @@ const sanitizeBody = (body) => {
   const sanitized = {};
   if (name) sanitized.name = name.toLowerCase().trim();
   if (type) sanitized.type = type;
-  if (filling) sanitized.filling = filling.toLowerCase().trim();
+  sanitized.filling = filling.toLowerCase().trim() ?? '';
   if (price) sanitized.price = parseFloat(price);
   if (is_sold_out !== undefined) sanitized.is_sold_out = is_sold_out ? 1 : 0;
   return sanitized;
