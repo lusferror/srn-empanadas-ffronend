@@ -53,9 +53,10 @@ Recuerda que los archivos `.env` deben ser copiados manualmente a cada entorno (
 ## Notas
 - El frontend consume la API del backend usando JavaScript puro/AJAX.
 - Puedes modificar la configuración de la base de datos en `docker-compose.yml` y `backend/src/db/pool.js`.
-- El script SQL de ejemplo está en `backend/db_init.sql`.
+
 
 ## Autor
 Ing. en Sistemas Luis Robles
+
 
 
