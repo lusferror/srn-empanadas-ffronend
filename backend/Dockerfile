@@ -9,7 +9,10 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
 	&& npm install \
 	&& apt-get clean && rm -rf /var/lib/apt/lists/*
 
+
 COPY . .
+
+RUN npm install
 
 EXPOSE 3000
 
