@@ -67,3 +67,10 @@
 #--------------------------------------------------------------------
 
 # logger.threshold = 4
+
+#--------------------------------------------------------------------
+# API BACKEND
+#--------------------------------------------------------------------
+API_BASE_URL = http://localhost:3000/api
+BASIC_AUTH_USER='api_empanadas_user'
+BASIC_AUTH_PASSWORD='y7G!p2wQz9Lr@4vXc8Tn#1sDf6Bq$eJk5Vm^uH0aZxS'
