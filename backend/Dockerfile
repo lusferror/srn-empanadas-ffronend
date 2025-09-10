@@ -10,6 +10,4 @@ COPY . .
 
 EXPOSE 3000
 
-RUN [ -f ./.env ] || cp ./.env.example ./.env
-
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]

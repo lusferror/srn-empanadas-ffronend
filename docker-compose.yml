@@ -1,32 +1,30 @@
 version: '3.8'
 services:
-  db:
-    image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: empanadas_db
-      MYSQL_USER: empanadas_user
-      MYSQL_PASSWORD: empanadas_pass
-    ports:
-      - '3306:3306'
-    volumes:
-      - db_data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+  # db:
+  #   image: mysql:8.0
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: empanadas_db
+  #     MYSQL_USER: empanadas_user
+  #     MYSQL_PASSWORD: empanadas_pass
+  #   ports:
+  #     - '3306:3306'
+  #   volumes:
+  #     - db_data:/var/lib/mysql
+  #   healthcheck:
+  #     test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+  #     interval: 10s
+  #     timeout: 5s
+  #     retries: 5
   backend:
     build: ./backend
-    env_file:
-      - ./backend/.env
     ports:
       - '3000:3000'
     volumes:
       - ./backend:/app
-    depends_on:
-      db:
-        condition: service_healthy
-        
+    # depends_on:
+    #   db:
+    #     condition: service_healthy
+
 volumes:
   db_data:
