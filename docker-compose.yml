@@ -27,6 +27,18 @@ services:
     depends_on:
       db:
         condition: service_healthy
-
+  frontend:
+    build: ./frontend
+    ports:
+      - '8080:80'
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/var/www/html/application
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html/application/public
+    links:
+      - backend
+      - db
 volumes:
   db_data:
