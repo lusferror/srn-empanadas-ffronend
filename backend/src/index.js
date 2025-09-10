@@ -1,7 +1,8 @@
+import { initDb } from './db/pool.js';
 import express from 'express';
 import cors from 'cors';
-import { basicAuthentication } from './middlewares/basicAuthentication.js';
-import { initDb } from './db/pool.js';
+import { router as  empanadasRouter } from './routes/empanadas.js';
+import { basicAuthenticacion } from './middlewares/basicAuthenticacion.js';
 
 const app = express();
 
@@ -10,9 +11,7 @@ initDb();
 app.use(cors());
 app.use(express.json());
 
-app.get('/api', basicAuthentication, (req, res) => {
-  res.json({ message: 'API is working', success: true });
-});
+app.use('/api',basicAuthenticacion,  empanadasRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
