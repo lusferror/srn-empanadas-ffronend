@@ -20,24 +20,20 @@ Recuerda que los archivos `.env` deben ser copiados manualmente a cada entorno (
 	git clone <URL-del-repo>
 	cd gestion_empanadas_chilenas
 	```
-2. Levanta los servicios backend y base de datos:
+2. **Instala las dependencias del backend y frontend antes de levantar los servicios:**
+	```sh
+	cd backend
+	npm install
+	cd ../frontend
+	composer install
+	cd ..
+	```
+3. Levanta los servicios backend y base de datos:
 	```sh
 	docker-compose up --build
 	```
 	Esto creará la base de datos y levantará el backend en `localhost:3000`.
-3. Inicializa la base de datos (opcional si ya está poblada):
-	- Puedes ejecutar el script `backend/db_init.sql` en el contenedor MySQL para crear la tabla y datos de ejemplo.
-4. Instala CodeIgniter en la carpeta `frontend` (si no está instalado):
-	- Descarga CodeIgniter 3.x desde https://codeigniter.com/download y descomprime el contenido en `frontend/`.
-	- Asegúrate de que los archivos `application/` y `system/` estén presentes.
-	- Los archivos de configuración y vistas ya están preparados.
-5. Levanta el frontend (PHP/Apache):
-	```sh
-	docker build -t empanadas-frontend ./frontend
-	docker run -d -p 8080:80 --name empanadas-frontend --link empanadas-backend:backend empanadas-frontend
-	```
-	O usa un contenedor PHP/Apache a tu elección.
-6. Accede a la app en tu navegador: [http://localhost:8080](http://localhost:8080)
+4. Accede a la app en tu navegador: [http://localhost:8080](http://localhost:8080)
 
 ## Pruebas Backend
 1. Entra a la carpeta backend:
