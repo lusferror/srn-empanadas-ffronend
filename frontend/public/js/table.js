@@ -171,6 +171,5 @@ function refreshPagination() {
   if (totalPages === 0) {
     pagination.innerHTML = '<li class="page-item disabled"><span class="page-link">1</span></li>';
   }
-  document.getElementById('totalPages').innerText = totalPages;
-  document.getElementById('currentPage').innerText = currentPage;
+
 }

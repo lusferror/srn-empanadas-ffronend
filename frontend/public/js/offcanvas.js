@@ -216,6 +216,6 @@ function fillForm(data) {
   document.getElementById('price').value = data.price;
   document.getElementById('type').value = data.type;
   document.getElementById('is_sold_out').value = data.is_sold_out === 1 ? '1' : '0';
-  fillings = data.filling && data.filling.lenght >  0 ? data.filling.split(',').map(f => f.trim()) : [];
+  fillings = data.filling && data.filling.length >  0 ? data.filling.split(',').map(f => f.trim()) : [];
   renderIngredients();
 }
