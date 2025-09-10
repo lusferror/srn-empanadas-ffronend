@@ -56,4 +56,5 @@ Recuerda que los archivos `.env` deben ser copiados manualmente a cada entorno (
 - El script SQL de ejemplo está en `backend/db_init.sql`.
 
 ## Autor
-[Tu Nombre]
+Luis Robles
+
