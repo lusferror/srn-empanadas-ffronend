@@ -11,9 +11,6 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
 
 COPY . .
 
-# Copia el archivo de ejemplo de variables de entorno después de copiar el código
-RUN cp .env.example .env
-
 EXPOSE 3000
 
 CMD ["npm", "run", "start"]
