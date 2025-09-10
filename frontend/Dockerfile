@@ -8,6 +8,8 @@ RUN apt-get update \
 
 COPY . /var/www/html/application
 
+RUN cd /var/www/html/application && composer install
+
 RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/application/public|g' /etc/apache2/sites-available/000-default.conf \
 	&& sed -i 's|<Directory /var/www/html>|<Directory /var/www/html/application/public>|g' /etc/apache2/apache2.conf
 
